@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# personal data / local runtime
+server/.env
+server/data/
+server/logs/
+server/venv/
+
+# build products
+macapp/.build/
+macapp/build/
+dist/

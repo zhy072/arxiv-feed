@@ -1,0 +1,16 @@
+[Unit]
+Description=arxiv feed API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/arxiv
+EnvironmentFile=/opt/arxiv/.env
+ExecStart=/opt/arxiv/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port ${API_PORT}
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
